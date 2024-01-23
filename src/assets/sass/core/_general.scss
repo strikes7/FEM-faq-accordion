@@ -1,0 +1,11 @@
+@use "../abstract/" as *;
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  background-image: url("../images/background-pattern-desktop.svg");
+  background-repeat:no-repeat;
+  background-size: 100% auto;
+  background-color: $clr-neutral-200;
+  font-family: $ff-primary;
+}

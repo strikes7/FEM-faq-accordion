@@ -1,0 +1,96 @@
+@use "../abstract/" as *;
+
+.faq{
+    box-sizing: border-box;
+    width: min(92%, toRem(600));
+    margin-block-start: 12.2vw;
+    margin-inline: auto;
+    padding: toRem(40) toRem(40) toRem(10);
+    border-radius: .8rem;
+    background-color: $clr-neutral-100;
+
+    &__title{
+        margin-block: 0;
+        line-height: 1;
+        font-size: $fs-700;
+        font-weight: 700;
+        color: $clr-purple-200;
+
+        &::before{
+            content: "";
+            display: inline-block;
+            margin-inline-end: 1.85rem;
+            vertical-align: -.2rem;
+            background-image: url("../images/icon-star.svg");
+            height: $fs-600;
+            aspect-ratio: 1/1;
+           background-size: contain;
+        }
+    }
+
+    &__list{
+        padding-inline-start: 0;
+        list-style: none;
+        &>li {
+            padding-block: toRem(10);
+
+            &:not(:last-child){
+                border-block-end: 2px solid $clr-neutral-200;
+            }
+        }
+    }
+
+    &__question{
+        position: relative;
+        font-size: $fs-500;
+        font-weight: 600;
+        color: $clr-purple-200;
+        cursor: pointer;
+        &:hover{
+            color: $clr-purple-300;
+        }
+        &::after{
+            --bg-size: 0% 0%;
+            --bg-size-negative: 100% 100%;
+            display: inline-block;
+            position: absolute;
+            top: -.1rem;
+            right: 0;
+            height: toRem(26);
+            aspect-ratio: 1/1;
+            content: "";
+            background-image: url("../images/icon-minus.svg"),
+                url("../images/icon-plus.svg");
+            background-repeat: no-repeat, no-repeat;
+            background-size: var(--bg-size), var(--bg-size-negative);
+            transition: background-size .25s ease-in-out;
+            background-position: center;
+        }
+        &.selected::after{
+            --bg-size: 100% 100%;
+            --bg-size-negative: 0% 0%;
+        }
+    }
+
+    &__answer{
+        line-height: 1.4;
+        color: $clr-purple-100;
+        margin-block: 0 ;
+        padding-block-end: toRem(12);
+    }
+}
+
+.faq__question.selected + .faq-answer-container{
+    grid-template-rows: 1fr;
+}
+
+.faq-answer-container{
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows .2s ease-out;
+
+    &> div{
+        overflow: hidden;
+    }
+}

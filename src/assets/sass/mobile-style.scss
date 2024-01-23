@@ -1,0 +1,21 @@
+@use "abstract/" as *;
+
+body{
+    background-image: url("../images/background-pattern-mobile.svg");
+}
+
+.faq{
+    margin-block-start:  clamp(toRem(140), 31vw, toRem(180));
+    padding: toRem(23) toRem(23) 0 ;
+}
+
+.faq__list{
+    margin-block-start: 0;
+}
+.faq__question{
+    width: 85%;
+
+    &::after{
+        left: 111.5%;
+    }
+}

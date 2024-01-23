@@ -1,0 +1,19 @@
+body {
+  background-image: url("../images/background-pattern-mobile.svg");
+}
+
+.faq {
+  margin-block-start: clamp(8.75rem, 31vw, 11.25rem);
+  padding: 1.4375rem 1.4375rem 0;
+}
+
+.faq__list {
+  margin-block-start: 0;
+}
+
+.faq__question {
+  width: 85%;
+}
+.faq__question::after {
+  left: 111.5%;
+}
