@@ -6,11 +6,9 @@ body {
   margin-block-start: clamp(8.75rem, 31vw, 11.25rem);
   padding: 1.4375rem 1.4375rem 0;
 }
-
 .faq__list {
   margin-block-start: 0;
 }
-
 .faq__question {
   width: 85%;
 }
